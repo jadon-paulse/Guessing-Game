@@ -9,43 +9,37 @@ using namespace std;
 int main(){
 
     srand(time(0));
-/*    const int minValue = 1;
-    const int maxValue = 100;
-*/
+
     int guess;
-    //cout << "Enter your guess here: ";
-    //cin >> guess;
 
     int num = (rand() % 100) + 1;
-    //cout << "The random number was " << num << endl;
+    cout << "The random number was " << num << endl;
 
     int attempts;
 
-    if (guess != num)
-    {
-        for (attempts = 4; attempts > -1; attempts--){
-            if (attempts > -1){
-                cout << "Enter your guess here: ";
-                cin >> guess;
-                cout << "Guess was incorrect" << endl;
-                cout << "Attempts left: " << attempts << endl;
-                cout << "Try Again" << endl;
-            }
-            else {
-                cout << "Guess was incorrect" << endl;
-                cout << "Attempts left: " << attempts << endl;
-            }
+    cout << "You have 5 attempts" << endl;
+    cout << "Enter your guess here: ";
+    cin >> guess;
 
-            //cout << "The random number was " << num;
+    for (attempts = 4; attempts >= 0; attempts--){
+
+        if (guess == num)  {
+            cout << "Guess was correct" << endl;
+            cout << "The random number was " << num;
+            return 0;
         }
-    
-        cout << "The random number was " << num;
-    }
-    else
-    {
 
-        cout << "Guess was correct" << endl;
+        cout << "Guess was incorrect" << endl;
+        cout << "Attempts left: " << attempts << endl;
+
+        if (attempts > 0) {
+            cout << "Try Again" << endl;
+            cin >> guess;
+        }
+
     }
+
+        
 
     return 0;
 }
