@@ -29,12 +29,22 @@ int main(){
             return 0;
         }
 
-        cout << "Guess was incorrect" << endl;
         cout << "Attempts left: " << attempts << endl;
 
         if (attempts > 0) {
             cout << "Try Again" << endl;
+            cout << "Enter here: ";
             cin >> guess;
+        }
+
+        if (attempts == 3) {
+            cout << "Guess was incorrect" << endl;
+            cout << "The number is between " << num - 10 << " and " << num + 10 << endl;
+        }
+
+        if (attempts == 2) {
+            cout << "Guess was incorrect" << endl;
+            cout << "The number is between " << num - 5 << " and " << num + 5 << endl;
         }
 
     }
